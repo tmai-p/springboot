@@ -16,3 +16,6 @@
 	 - git branch -M main
 	 - git remote add origin https://github.com/tmai-p/springboot.git
 	 - git push -u origin main
+
+  - Note: you can download the executable file from https://git-scm.com/downloads/win
+  - Just take the default throughout the installation
