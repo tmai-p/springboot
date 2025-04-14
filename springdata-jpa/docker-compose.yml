@@ -1,0 +1,32 @@
+version: "3"
+services:
+  api_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-api-mysql-net
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/world?allowPublicKeyRetrieval=true
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    image: "mysql:8.4.2"
+    restart: always
+    ports:
+      - "3307:3306"
+    networks:
+      - spring-api-mysql-net
+    environment:
+      MYSQL_DATABASE: world
+      #MYSQL_USER: root
+      #MYSQL_PASSWORD: Mysql123!
+      MYSQL_ROOT_PASSWORD: Mysql123!
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+networks:
+  spring-api-mysql-net:
