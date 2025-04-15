@@ -1,5 +1,12 @@
 ### Springboot sample projects
 
+#### Backend system and platform
+They are running on Docker Desktop as containers.
+- MongoDB
+- ActiveMQ Artemis
+- Kafka
+- MySQL
+
 #### Check in all projects to a respository
 
 1. Create a git repository on github
